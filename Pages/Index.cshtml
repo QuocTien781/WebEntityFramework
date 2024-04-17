@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@using WebEntityFramework.Models
+@{
+    var post = ViewData["Post"] as List<Article>;
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Title</th>
+        <th>PublistDate</th>
+        <th>Content</th>
+
+    </tr>
+    @foreach (var item in post)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.PublishDate</td>
+            <td>@item.Content</td>
+        </tr>
+    }
+</table>
